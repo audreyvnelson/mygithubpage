@@ -2,27 +2,29 @@
 <html>
 
 <head>
-<!--scripts-->
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-<script src="./scripts/projects.js"></script>
+	<!--scripts-->
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="./scripts/projects.js"></script>
+	
+	<title>Audrey V Nelson</title>
 </head>
 
 <body>
 
 
 
-<div ng-app="" ng-init="projects=[
-{name:'Project 1',code:'Norway'},
-{name:'Project 2',code:'Sweden'},
-{name:'Project 3',code:'Denmark'}]">
+	<div ng-app="" ng-init="projects=[
+		{name:'Project 1',code:'Norway'},
+		{name:'Project 2',code:'Sweden'},
+		{name:'Project 3',code:'Denmark'}]">
 
-<p>Looping with objects:</p>
-<ul>
-  <li ng-repeat="x in projects">
-  {{ x.name + ', ' + x.code }}</li>
-</ul>
+		<p>Looping with objects:</p>
+		<ul>
+			<li ng-repeat="x in projects">
+			{{ x.name + ', ' + x.code }}</li>
+		</ul>
 
-</div>
+	</div>
 
 </body>
 </html>
