@@ -2,7 +2,9 @@
 <html>
 
 <head>
+<!--scripts-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+<script src="./scripts/projects.js"></script>
 </head>
 
 <body>
@@ -11,6 +13,19 @@
  
 <p>Input something in the input box:</p>
 <p>Name: <input type="text" ng-model="name" value="John"></p>
+
+<script>
+	var projects = getProjectData();
+</script>
+
+<div id="projectList"> 
+		<ul>
+			<li ng-repeat="project in projects">
+				<a>{{tab.name}}</a>
+			</li>
+		</ul>
+	</div>
+
 <p ng-bind="name"></p>
 
 </div>
