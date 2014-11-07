@@ -1,0 +1,211 @@
+<!--Top Panel (Not yet made for Angular)----------------------------------------------------------->
+<div id="headerHolder" class="headerHolder">
+	<div id="mainHeader" class="header" >
+		<h1>ATC IT Executive Scorecard</h1>
+		<br/>
+		
+		<select id="month" ng-model="month_select" ng-change="selectDate()">
+			<option>07/13/2014</option>
+			<option>06/30/2014</option>
+			<option>05/31/2014</option>
+			<option>04/30/2014</option>
+			<option>03/31/2014</option>
+			<option>02/28/2014</option>
+			<option>01/31/2014</option>
+		</select>
+		<h2 >Month Ending:<h2>
+		
+	</div>
+</div><!--End Top Panel-->
+
+<div id="perfAvailTable" class="perfAvailTable">
+		<h3>Performance and Availability</h3>
+
+	<!-- Tabs -->
+	<div id="header"> 
+		<ul>
+			<li ng-repeat="tab in tabArr track by $index" id="tab_{{$index}}" style="z-index: {{tabArr.length - $index}}"
+							ng-click="pageState.tab = tab; pageState.businessUnit = tab.businessUnits[0]; updateBU(pageState.tab, 0); updateGraphs();  sparkGraphs(); placeImages();"
+							ng-class="{selected_T: $index === pageState.tab.id, selected_F: $index !== pageState.tab.id}">
+				<a>{{tab.name}}</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<div id="content">
+	
+	<!-- Create table with buttons for ATC and KBB -->
+	<table id="myTable" style="z-index: {{tabArr.length + 1}}; position:relative" ><!--class="sortable"-->
+		<thead>
+			<tr>
+				<th>{{pageState.tab.name}}</th>
+				<th>Target</th>
+				<th></th><!--image holder-->
+				<th>Availability</th>
+				<th>Availability Trend</th>
+				<th>Target</th>
+				<th></th><!--image holder-->
+				<th>Performance</th>
+				<th>Performance Trend</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr ng-repeat="i in numTableRows track by $index" id="{{$index}}" 
+							ng-click="updateBU(pageState.tab, $index); updateGraphs();"
+							ng-class="{
+								regSelect: $index === pageState.businessUnit.id && ($index % 2) === 0,
+								altSelect: $index === pageState.businessUnit.id && ($index % 2) !== 0,
+								reg: $index !== pageState.businessUnit.id && ($index % 2) === 0,
+								alt: $index !== pageState.businessUnit.id && ($index % 2) !== 0
+							}">
+				<td>{{pageState.tab.businessUnits[$index].name}}</td> 
+				<td>{{pageState.tab.businessUnits[$index].targetAvailability}}</td>
+				<td><div id="imgAvail{{$index}}"></div></td>
+				<td>{{pageState.tab.businessUnits[$index].actualAvailability[pageState.month]}}</td>
+				<td><div id="sparkAvail{{$index}}" class="dygraphContainer" style="float:right; width: 150px;"></div></td>
+				<td>{{pageState.tab.businessUnits[$index].targetPerformance}}</td>
+				<td><div id="imgPerf{{$index}}"></div></td>
+				<td>{{pageState.tab.businessUnits[$index].actualPerformance[pageState.month]}}</td>
+				<td><div id="sparkPerf{{$index}}" class="dygraphContainer" style="float:right; width: 150px;"></div></td>
+			</tr>
+		</tbody>
+	</table>
+
+	</div>
+</div>
+	
+	<!--Performance and Availability expandable section -->
+		<div id="perfAvailChartsHolder" class="perfAvailChartsHolder" >
+		<img src='./images/arrow2Transparent.gif' alt='Arrow' width='30' height='30' style="float: left; position: relative;  margin-left: 5px; margin-top: 9px;" onclick="expand('testing', 0)">
+			<p onclick="expand('testing', 0)" style="float: left; position: relative; width: 90%">Performance and Availability Charts </p>
+			<div id="testing" class="testing" style="display:none">
+				<div id='headerG' class='headerG'> <ul>
+				<li id='tab_g0' ng-class='{selected_F: pageState.timeScale != 0, selected_T: pageState.timeScale == 0}' ng-click="updateTimeScale(0); selectDate();"><a>6 Weeks</a></li>
+				<li id='tab_g1' ng-class='{selected_F: pageState.timeScale != 1, selected_T: pageState.timeScale == 1}' ng-click="updateTimeScale(1); selectDate();"><a>3 Months</a></li>
+				<li id='tab_g2' ng-class='{selected_F: pageState.timeScale != 2, selected_T: pageState.timeScale == 2}' ng-click="updateTimeScale(2); selectDate();"><a>6 Months</a></li>
+				<li id='tab_g3' ng-class='{selected_F: pageState.timeScale != 3, selected_T: pageState.timeScale == 3}' ng-click="updateTimeScale(3); selectDate();"><a>Year</a></li>
+				</ul></div>
+				<div id='availContainer' class='graphContainer'>
+				<div id='dygAvail' class='dygraphContainer' style='width: 100%'></div>
+				</div>
+				<div id='perfContainer' class='graphContainer'>
+				<div id='dygPerf' class='dygraphContainer' style='margin-top: 50px; width: 100%; margin-bottom: 50px;'></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--YTD and Quarterly expandable section -->
+		<div id="ytdChartsHolder" class="perfAvailChartsHolder" >
+		<img src='./images/arrow2Transparent.gif' alt='Arrow' width='30' height='30' style="float: left; position: relative;  margin-left: 5px; margin-top: 9px;" onclick="expand('testing2', 1)">
+			<p onclick="expand('testing2', 1)" style="float: left; position: relative;">YTD Performance and Availability</p>
+			<div id="testing2" class="testing2" style="display:none">
+				<div id='quarterlyYTD' class='quarterlyYTD' >
+				<div id='chartContainer' class='chartContainer'>
+					
+				<div id='QuarterContainer' class='quarterContainer'>
+				<table id='Quarters'>
+				<thead><tr><th>Quarter</th><th>Target</th><th>Availability</th><th>Target</th><th>Performance</th></tr></thead>
+				<tbody>
+				
+				<tr ng-repeat="i in numQuarterRows track by $index" id="{{$index}}" >
+					<td>{{$index + 1}}</td> 
+					<td>{{pageState.businessUnit.targetAvailability}}</td> 
+					<td>{{pageState.businessUnit.quarterlyAvailability[$index]}}</td> 
+					<td>{{pageState.businessUnit.targetPerformance}}</td> 
+					<td>{{pageState.businessUnit.quarterlyPerformance[$index]}}</td> 
+				</tr>
+				
+				</tbody>
+				</table></div>
+					
+				<div id='gaugeHolder' class='gaugeHolder' style='width: 40%; position: relative; float: right; margin-left: 15px; height: 130px; min-width: 275px;'>
+					
+				<div id='availGauges' class='gaugeContainer'>
+				<div id='availGaugeContainer' style='height: 130px;  margin-top: 5px'></div>
+				</div>
+				<div id='perfGauges' class='gaugeContainer'>
+				<div id='perfGaugeContainer' style='height: 150px; margin-left: 5px; margin-top: 5px;'></div>
+				</div>
+				</div>
+				</div></div>
+			</div>
+		</div>
+		
+		<!--Incident Table -->
+		<div id="incidentTable" class="incidentTable">
+		<h3>Incident Reports</h3>
+			<table id="myTable"><!--class="sortable"-->
+				<thead>
+					<tr>
+						<th>Business Unit</th>
+						<th>Feb 14</th>
+						<th>Mar 14</th>
+						<th>Apr 14</th>
+						<th>May 14</th>
+						<th>Jun 14</th>
+						<th>Jul 14</th>
+						<th>6 Month Trend</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr ng-repeat="i in numTableRows track by $index" id="{{$index}}" 
+							ng-click="updateIncidentBU($index); updateGraphs()"
+							ng-class="{
+								regSelect: $index === pageState.incidentBU.id && ($index % 2) === 0,
+								altSelect: $index === pageState.incidentBU.id && ($index % 2) !== 0,
+								reg: $index !== pageState.incidentBU.id && ($index % 2) === 0,
+								alt: $index !== pageState.incidentBU.id && ($index % 2) !== 0
+							}">
+						<td>{{incArr[$index].name}}</td> 
+						<td>{{incArr[$index].month6}}</td>
+						<td>{{incArr[$index].month5}}</td>
+						<td>{{incArr[$index].month4}}</td>
+						<td>{{incArr[$index].month3}}</td>
+						<td>{{incArr[$index].month2}}</td>
+						<td>{{incArr[$index].month1}}</td>
+						<td><div id="sparkInc" + {{$index}} class="dygraphContainer" style="float:right; width: 150px;"></div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<!-- Incidents and Problem Charts expandable section -->
+		<div id="incidentsChartsHolder" class="perfAvailChartsHolder">
+		<img src='./images/arrow2Transparent.gif' alt='Arrow' width='30' height='30' style="float: left; position: relative;  margin-left: 5px; margin-top: 9px;" onclick="expand('testing3', 2)">
+			<p onclick="expand('testing3', 2); " style="float: left; position: relative; width: 90%;">Incident and Problem Charts</p>
+			<div id="testing3" class="testing3" style="display:none">
+				<h2 style='float: left; margin-left: 5px;'>Incidents</h2>
+				<div id='incidentContainer' style='float:right; position:relative; width:100%;'>
+				<div style='width:50%; float:right; position: relative;'><h2 style='float:left; margin-left: 40%;'>Aging by Month</h2><svg id='incChart1' class='chart1' style='float: right; position: relative'></svg></div>
+				<div id='dygInc1' style='width: 50%; float: left; position: relative; margin-bottom: 10px;'></div>
+				</div>
+				<h2 style='float: left;  margin-left: 5px;'>Problems</h2>
+				<div id='problemContainer' style='float:right; position:relative; width:100%;'>
+				<div style='width:50%; float:right; position: relative;'><h2 style='float:left; margin-left: 40%;'>Aging by Month</h2><svg id='incChart2' class='chart2' style='float: right; position: relative'></svg></div>
+				<div id='dygInc2' style='width: 50%; float: left; position: relative; margin-bottom: 10px;'></div>
+				</div>
+			</div>
+		</div>
+		
+		<!--End User Computing expandable container -->
+		<div id="endUserChartsHolder" class="perfAvailChartsHolder" style="margin-bottom: 30px;">
+		<img src='./images/arrow2Transparent.gif' alt='Arrow' width='30' height='30' style="float: left; position: relative;  margin-left: 5px; margin-top: 9px;" onclick="expand('testing4', 3)">
+			<p onclick="expand('testing4', 3)" style="float: left; position: relative; width: 90%;">ATG End User Computing Requests by BU</p>
+			<div id="testing4" class="testing4" style="display:none">
+				<svg id='eucChart1' class='eucChart1' style='float: left; position: relative'></svg>
+				<div id='dygIncAll' style='width: 70%; float: left; position: relative; margin-bottom: 20px;'></div>
+			</div>
+		</div>
+		
+		<!--<div id="deleteLater" ng-click="sparkGraphs(); placeImages();  gauge(); makePerfAvailGraphs(); selectDate();makeEUCchart(); "><p>START</p></div>-->
+	
+	
+	<!-- Not Yet Formatted To Angular ------------------------------------------------------------------------------------------------------------------------->
+	
+
+	
+
