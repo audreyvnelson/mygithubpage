@@ -9,21 +9,18 @@
 
 <body>
 
-<div ng-app="">
- 
-<p>Input something in the input box:</p>
-<p>Name: <input type="text" ng-model="name" value="John"></p>
-<p ng-bind="name"></p>
 
-</div>
-
-<div data-ng-app="" data-ng-init="names=['Jani','Hege','Kai']">
+<div data-ng-app="" data-ng-init="names=getProjectData();">
   <p>Looping with ng-repeat:</p>
   <ul>
     <li data-ng-repeat="x in names">
       {{ x }}
     </li>
   </ul>
+  
+  	<p>Input something in the input box:</p>
+	<p>Name: <input type="text" ng-model="name" value="John"></p>
+	<p ng-bind="name"></p>
 </div>
 
 </body>
