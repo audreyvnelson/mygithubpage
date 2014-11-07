@@ -7,13 +7,21 @@
 <script src="./scripts/projects.js"></script>
 </head>
 
-<body>
+<body onload="getProjects()">
 
+<script>
+	var projects = getProjectData();
+	
+	function getProjectData() {
+		var projects = ['1','2','4'];
+		return projects;
+	}
+</script>
 
-<div data-ng-app="" data-ng-init="names=getProjectData();">
+<div data-ng-app="" data-ng-init="names=['Jani','Hege','Kai']">
   <p>Looping with ng-repeat:</p>
   <ul>
-    <li data-ng-repeat="x in names">
+    <li data-ng-repeat="x in projects">
       {{ x }}
     </li>
   </ul>
