@@ -1,6 +1,6 @@
 'use strict';
 
-var scoreCard = angular.module('scoreCard', [
+var scoreCard = angular.module('portfolio', [
 	'ngRoute',
 	'genericController'
 ]);
