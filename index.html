@@ -18,18 +18,19 @@
 
 
 	<div ng-app="" ng-init="projects=[
-		{name:'Project 1',code:'wow', video:'vid1.mp4'},
-		{name:'Project 2',code:'such cool',video:'vid1.mp4'},
-		{name:'Project 3',code:'much code',video:'vid1.mp4'}]">
+		{name:'Project 1',code:'wow', video:'Coons3Dvideo2.mp4'},
+		{name:'Project 2',code:'such cool',video:'Coons3Dvideo2.mp4'},
+		{name:'Project 3',code:'much code',video:'Coons3Dvideo2.mp4'}]">
 
 		<p>Looping with objects:</p>
 		<ul>
 			<li ng-repeat="x in projects">
 			{{ x.name + ', ' + x.code }}
+			<video controls="controls" width="800" height="600" name="Video Name" src={{x.video}}></video>
 			</li>
 		</ul>
 		
-		<video controls="controls" width="800" height="600" name="Video Name" src="Coons3Dvideo2.mp4"></video>
+		
 		
 	</div>
 
