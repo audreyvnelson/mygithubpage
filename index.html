@@ -20,13 +20,13 @@
 
 	<div ng-app="" ng-init="projects=[
 		{name:'Vertex and Fragment Shaders',code:'wow', video:'VertexFragmentShaders.mp4',
-			language: 'idk', description: 'lots of text'},
+			language: 'idk', author:'Audrey Nelson and Prof. Jarek Rossignac', description: 'lots of text'},
 		{name:'3D Coons Patch Interpolation',code:'such cool',video:'Coons3Dvideo2.mp4',
-			language: 'Processing', description: 'blah'},
+			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', description: 'blah'},
 		{name:'2D Coons Patch Interpolation',code:'much code',video:'CoonsPatchVideo.mp4',
-			language: 'Processing', description: 'need to see what a whoooooooole looooooooooooot of text is going to look like in this section. Will it show up as a nice paragraph? I hope it looks nice without me having to do a whole bunch of time consuming formatting. Please fit on the page.'},
+			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', description: 'need to see what a whoooooooole looooooooooooot of text is going to look like in this section. Will it show up as a nice paragraph? I hope it looks nice without me having to do a whole bunch of time consuming formatting. Please fit on the page.'},
 		{name:'Predicting Motion',code:'much code',video:'CS3451_P02.mp4',
-			language: 'Processing', description: 'blah'}
+			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', description: 'blah'}
 		]">
 
 		<p><br><br> </p>
@@ -35,6 +35,7 @@
 			<h2>{{ x.name }}</h2>
 			<p>
 				<b>Coded using: </b>{{x.language}}<br>
+				<b>Author(s): </b>{{x.author}}<br>
 				<b>View code: </b>{{x.code}}<br>
 			
 				{{x.description}}
