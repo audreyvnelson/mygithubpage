@@ -8,6 +8,10 @@
 	box-shadow: 10px 10px 5px #000000;
 }
 
+body{
+	background-color: #C0C0C0;
+}
+
 h1{
 	text-align: center;
 	text-shadow: 2px 2px #000000;	
