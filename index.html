@@ -31,8 +31,9 @@
 
 		<p><br><br> </p>
 		
-			<p ng-repeat="x in projects">
+			<div ng-repeat="x in projects">
 			<h2>{{ x.name }}</h2>
+			<p>
 			<br><br>
 			Coded using: {{x.language}}<br>
 			View code: {{x.code}}<br>
@@ -42,6 +43,7 @@
 			<video controls="controls" width="800" height="600" name="Video Name" src={{x.video}}></video>
 			<br><br>
 			</p>
+			</div>
 		
 		
 		
