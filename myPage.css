@@ -21,6 +21,8 @@ h1{
 	width:80%;
 	margin-left:10%;
 	background-color: white;
+	box-shadow: 10px 10px 5px #000000;
+	margin-bottom: 20px;
 }
 
 p{
