@@ -6,13 +6,10 @@
 	float: left; 
 	width: 100%;
 	box-shadow: 10px 10px 5px #404040;
-	overflow: hidden;
-	position: absolute;
 }
 
 body{
 	background-color: #A0A0A0;
-	overflow: auto;
 }
 
 h1{
