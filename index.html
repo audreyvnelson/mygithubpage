@@ -34,10 +34,9 @@
 			<p ng-repeat="x in projects">
 			{{ x.name }}
 			<br>
-			<ul>
-			<li>Coded using: {{x.language}}</li>
-			<li>View code: {{x.code}}</li>
-			</ul>
+			Coded using: {{x.language}}
+			View code: {{x.code}}
+			
 			{{x.description}}
 			<br><br>
 			<video controls="controls" width="800" height="600" name="Video Name" src={{x.video}}></video>
