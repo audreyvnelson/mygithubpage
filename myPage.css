@@ -12,3 +12,9 @@ h1{
 	text-align: center;
 	text-shadow: 2px 2px #000000;	
 }
+
+.project{
+	width:80%;
+	margin-left:10%;
+	background-color: #9999FF;
+}
