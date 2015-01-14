@@ -9,7 +9,7 @@
 }
 
 body{
-	background-color: white;
+	background-color: #C0C0C0;
 }
 
 h1{
@@ -20,13 +20,13 @@ h1{
 .project{
 	width:80%;
 	margin-left:10%;
-	background-color: #C0C0C0;
+	background-color: white;
 }
 
 p{
-	margin-left: 5px;
+	margin-left: 10px;
 }
 
 h2{
-	margin-left: 5px;
+	margin-left: 10px;
 }
