@@ -20,7 +20,7 @@ h1{
 .project{
 	width:80%;
 	margin-left:10%;
-	background-color: #C0C0C0;
+	background-color: white;
 }
 
 p{
@@ -29,4 +29,9 @@ p{
 
 h2{
 	margin-left: 10px;
+	color: #460152;
+}
+
+video{
+	margin-left: 10%;
 }
