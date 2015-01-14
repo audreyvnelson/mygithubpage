@@ -30,18 +30,20 @@
 		]">
 
 		<p><br><br> </p>
-		<ul>
+		
 			<p ng-repeat="x in projects">
 			{{ x.name }}
 			<br>
-			<!--<li>Coded using: {{x.language}}</li>-->
-			<!--<li>View code: {{x.code}}</li>-->
+			<ul>
+			<li>Coded using: {{x.language}}</li>
+			<li>View code: {{x.code}}</li>
+			</ul>
 			{{x.description}}
 			<br><br>
 			<video controls="controls" width="800" height="600" name="Video Name" src={{x.video}}></video>
 			<br><br>
 			</p>
-		</ul>
+		
 		
 		
 		
