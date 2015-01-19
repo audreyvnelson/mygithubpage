@@ -63,3 +63,12 @@ video{
 .hack{
 	height: 2px;
 }
+
+a:link {
+    color: #460152;
+}
+
+
+a:visited {
+    color: #460152;
+}
