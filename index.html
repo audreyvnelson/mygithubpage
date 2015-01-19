@@ -20,19 +20,19 @@
 
 	<div ng-app="" ng-init="projects=[
 		{name:'Vertex and Fragment Shaders',code:'wow', video:'videos/VertexFragmentShaders.mp4',
-			language: 'OpenGL, GPU', author:'Audrey Nelson', pdf: '<a href='pdfs/VertexFragmentShaders.pdf'>Click to view full write up.</a>',
+			language: 'OpenGL, GPU', author:'Audrey Nelson', pdf: 'pdfs/VertexFragmentShaders.pdf',
 			description: 'lots of text'},
 		{name:'3D Coons Patch Interpolation',code:'such cool',video:'videos/Coons3Dvideo2.mp4',
 			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', pdf: 'pdfs/none',
 			description: 'blah'},
 		{name:'2D Coons Patch Interpolation',code:'much code',video:'videos/CoonsPatchVideo.mp4',
-			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', pdf: 'VertexFragmentShaders.pdf',
+			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', pdf: 'pdfs/2DcoonsPatch.pdf',
 			description: 'need to see what a whoooooooole looooooooooooot of text is going to look like in this section. Will it show up as a nice paragraph? I hope it looks nice without me having to do a whole bunch of time consuming formatting. Please fit on the page.'},
 		{name:'Frozen Game for GameBoy Advance',code:'much code',video:'videos/FrozenGame.mp4',
-			language: 'C', author:'Audrey Nelson', pdf: 'VertexFragmentShaders.pdf',
+			language: 'C', author:'Audrey Nelson', pdf: 'pdfs/none',
 			description: 'need to see what a whoooooooole looooooooooooot of text is going to look like in this section. Will it show up as a nice paragraph? I hope it looks nice without me having to do a whole bunch of time consuming formatting. Please fit on the page.'},
 		{name:'Predicting Motion',code:'much code',video:'videos/CS3451_P02.mp4',
-			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', pdf: 'VertexFragmentShaders.pdf',
+			language: 'Processing', author:'Audrey Nelson and Prof. Jarek Rossignac', pdf: 'pdfs/none',
 			description: 'blah'}
 		]">
 
@@ -45,8 +45,8 @@
 				<b>Coded using: </b>{{x.language}}<br>
 				<b>Author(s): </b>{{x.author}}<br>
 				<b>View code: </b>{{x.code}}<br>
-				
-				{{x.pdf}}
+				<a href={{x.pdf}}>Click to view full write up.</a>
+			
 				{{x.description}}
 				<br><br>
 				<video controls="controls" width="800" height="600" name="Video Name" src={{x.video}}></video>
