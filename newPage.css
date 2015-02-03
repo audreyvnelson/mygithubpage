@@ -1,0 +1,75 @@
+.titleHead{
+	background-image: "grass.JPG";
+	background-color: #460152;
+	color: white;
+	height: 75px;
+	vertical-align: middle;
+	float: left; 
+	width: 100%;
+	box-shadow: 10px 10px 5px #404040;
+}
+
+body{
+	background-color: #A0A0A0;
+}
+
+h1{
+	text-align: center;
+	text-shadow: 2px 2px #000000;
+	
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 35px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 35px;	
+}
+
+.project{
+	width:80%;
+	margin-left:10%;
+	background-color: white;
+	box-shadow: 5px 5px 3px #404040;
+	margin-bottom: 50px;
+}
+
+p{
+	margin-left: 15px;
+	
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+h2{
+	margin-left: 15px;
+	color: #460152;
+	
+	
+	font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 550;
+	line-height: 20px;
+}
+
+video{
+	margin-left: 10%;
+}
+
+.hack{
+	height: 2px;
+}
+
+a:link {
+    color: #460152;
+}
+
+
+a:visited {
+    color: #460152;
+}
