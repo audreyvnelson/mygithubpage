@@ -23,8 +23,8 @@ body{
 .grid_element {
   display: inline-block;
   background-color: #FFFFFF;
-  width: 16%;
-  height:16vw;
+  width: 18%;
+  height:18vw;
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
   margin-right:4%;
