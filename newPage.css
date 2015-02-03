@@ -23,11 +23,11 @@ body{
 .grid_element {
   display: inline-block;
   background-color: #FFFFFF;
-  width: 17%;
-  height:17vw;
+  width: 16%;
+  height:16vw;
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
-  margin-right:4%;
+  margin-right:5%;
   margin-left:4%;
   margin-bottom:8vw;
 }
