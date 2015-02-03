@@ -30,7 +30,7 @@ body{
   display*:inline; /* for IE */
 }
 .space{
-	width:8%;
+	width:7%;
 	height:16vw;
 	display:inline-block;
 	display*:inline
