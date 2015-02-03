@@ -4,7 +4,6 @@
 	vertical-align: middle;
 	float: left; 
 	width: 100%;
-	box-shadow: 10px 10px 5px #404040;
 }
 
 body{
@@ -24,6 +23,7 @@ body{
   height:200px;
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
+  margin-left: 100px;
 }
 
 h1{
