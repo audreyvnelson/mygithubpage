@@ -5,30 +5,13 @@
 			var isExpanded3 = 0;
 	
 				function expand(value, what){//expands or minimizes the selected project info
-					if(what==0){
-					
-					
-					
-						if(isExpanded0!=0){//if already open
-							isExpanded0 = 0;
-							document.getElementById("testing").style.display = "none";
-						}
-						else{//if unopened
-						document.getElementById("testing").style.display = "";
-							isExpanded0 = 1;
-							//makePerfAvailGraphs();
-							var theScope = angular.element(document.getElementById("theView")).scope();
-							theScope.makePerfAvailGraphs();
-							
-						}
-					}
-					else if(what==1){
+					if(what==1){
 						if(isExpanded1!=0){//if already open
 							isExpanded1 = 0;
-							document.getElementById("testing2").style.display = "none";
+							document.getElementById("description1").style.display = "none";
 						}
 						else{//if unopened
-							document.getElementById("testing2").style.display = "";
+							document.getElementById("description1").style.display = "";
 							isExpanded1 = 1;
 						}
 					}
