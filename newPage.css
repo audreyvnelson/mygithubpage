@@ -1,5 +1,4 @@
 .titleHead{
-	background-image: url("grass.png");
 	color: white;
 	height: 75px;
 	vertical-align: middle;
@@ -10,7 +9,7 @@
 
 body{
 	background-color: #000000;
-	background-image: url("Picture10.png");
+	background-image: url("grass.png");
 }
 
 h1{
