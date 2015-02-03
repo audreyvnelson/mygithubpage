@@ -29,6 +29,10 @@ body{
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
 }
+.space{
+	width:8%;
+	height:16vw;
+}
 
 h1{
 	text-align: center;
