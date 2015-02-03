@@ -23,12 +23,13 @@ body{
 .grid_element {
   display: inline-block;
   background-color: #FFFFFF;
-  width: 18%;
-  height:18vw;
+  width: 17%;
+  height:17vw;
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
   margin-right:4%;
   margin-left:4%;
+  margin-bottom:8vw;
 }
 .space{
 	width:7%;
