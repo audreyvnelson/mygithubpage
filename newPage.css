@@ -12,6 +12,14 @@ body{
 	background-image: url("grass.png");
 }
 
+.grid_element {
+  display: inline-block;
+  width: 200px;
+  height:200px;
+  zoom: 1;         /* for IE */
+  display*:inline; /* for IE */
+}
+
 h1{
 	text-align: center;
 	text-shadow: 2px 2px #000000;
