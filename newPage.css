@@ -18,7 +18,7 @@ body{
 
 .projectHolder{
 	width: 100%;
-	margin-right:3%;
+	margin-right:10%;
 }
 
 .grid_element {
@@ -32,12 +32,7 @@ body{
   margin-left:4%;
   margin-bottom:8vw;
 }
-.space{
-	width:7%;
-	height:16vw;
-	display:inline-block;
-	display*:inline
-}
+
 
 h1{
 	text-align: center;
