@@ -28,6 +28,7 @@ body{
   height:16vw;
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
+  margin-right:7%;
 }
 .space{
 	width:7%;
