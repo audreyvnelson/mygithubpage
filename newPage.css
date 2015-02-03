@@ -1,5 +1,5 @@
 .titleHead{
-	background-image: "grass.JPG";
+	background-image: url("grass.jpg");
 	color: white;
 	height: 75px;
 	vertical-align: middle;
