@@ -16,6 +16,11 @@ body{
 	height: 200px;
 }
 
+.projectHolder{
+	width: 90%;
+	margin-left: 5%;
+}
+
 .grid_element {
   display: inline-block;
   background-color: #FFFFFF;
@@ -24,6 +29,7 @@ body{
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
   margin-left: 100px;
+  margin-bottom: 100px;
 }
 
 h1{
