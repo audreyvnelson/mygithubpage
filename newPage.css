@@ -17,19 +17,17 @@ body{
 }
 
 .projectHolder{
-	width: 90%;
+	width: 100%;
 	margin-left: 5%;
 }
 
 .grid_element {
   display: inline-block;
   background-color: #FFFFFF;
-  width: 200px;
-  height:200px;
+  width: 16%;
+  height:16vw;
   zoom: 1;         /* for IE */
   display*:inline; /* for IE */
-  margin-left: 100px;
-  margin-bottom: 100px;
 }
 
 h1{
